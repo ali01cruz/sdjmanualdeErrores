@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual de Errores</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1em 0;
+        }
+
+        section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            max-width: 800px;
+            margin: 2em auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        h1 {
+            color: rgb(246, 237, 237);
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #333;
+            color: #fff;
+        }
+
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+
+        @media (max-width: 600px) {
+            section {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 id="titulo">Manual de Errores de Area de Calidad SDJ</h1>
+    </header>
+
+    <section>
+        <label for="search">Buscar error:</label>
+        <input type="text" id="search" placeholder="Ingrese el palabra o frase relacionado">
+
+        <table id="errorTable">
+            <thead>
+                <tr>
+                    <th>Evento</th>
+                    <th>Acción a Tomar</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Agrega más filas según sea necesario -->
+                <tr>
+                    <td>Cuando realiza corte de energía</td>
+                    <td>Lo que se realiza es si los lotes estan cargando, no quitar el bolson hasta que se tare la balanza</td>
+                </tr>
+                <tr>
+                    <td>Pinchadura de bolson</td>
+                    <td>relizar  informe teniendo siquientes preguntas, ¿que es lo que sucedio?,¿que deberia hacer?,¿Que propongo?</td>
+                </tr>
+                <tr>
+                    <td>Fecha de lotes incorrecto</td>
+                    <td>se puede cambiar la fecha desde el SAP en el intructivo :</td>
+                </tr>
+                <tr>
+                    <td>Cuando se realiza barrido después de una parada</td>
+                    <td>lo que se sugiere es ejemplo si se hace un barrido de 300kg Se  deja que cargue el producto luego se pone manual la balanza </td>
+                </tr>
+                <tr>
+                    <td>Cuando los lotes de enrase no llegan a pesar 1000kg</td>
+                    <td>estos se segragan y se entregan a planta </td>
+                </tr>
+                <tr>
+                    <td>Si el lote queda medio cargar y se para la planta por un momento</td>
+                    <td>se deja alli el bolson hasta que termine de completar ,se da aviiso a supervisor y a laboratorio de que lote q </td>
+                </tr>
+                <tr>
+                    <td>Cuando se realiza cambio de campaña prime a pur</td>
+                    <td>los lotes primeros que se sacan son como prime osea  bolsones de 1000kg </td>
+                </tr>
+                <tr>
+                    <td>Cuando se realiza cambio de campaña</td>
+                    <td>se tiene que ver en el mail de liberados por laboratorio o en SAP el ultimo lote que salio para  realizar un etiquetado correcto del lote que empezo a cargar  , que coinsida con  la planilla de registro de muestras</td>
+                </tr>
+                <tr>
+                    <td>A la hora de tomar muestra te equivocas en qué bolsita se depositó el producto</td>
+                    <td>cambiar los codigos de barra cuando es el lote B. en el otro caso seria remuestrear </td>
+                </tr>
+                <tr>
+                    <td>Preparado de muestra</td>
+                    <td>las etiquetas que dicen Arcadium Lithium... va en la mano derecha, si te equivocas tratar de que vayan en la misma mano</td>
+                </tr>
+                <tr>
+                    <td>Qué pasa cuando se segregan un lote</td>
+                    <td>se de aviso al  supervisor ,  luego el decide si reprocesarlo o  se va a guardar ese lote , en caso de guardar este se embala  de manera normal </td>
+                </tr>
+                <tr>
+                    <td>PPC</td>
+                    <td>los PPC que se encargamos  son de area seca eso queda en bepex todo lo que salga de alli</td>
+                </tr>
+                <tr>
+                    <td>Contenedores de nosotros</td>
+                    <td>13 muestras de PRIME , 8 MUESTRAS ya empaquedas de(prime , pur, mic) , 1  estan muestras MIC/PUR </td>
+                </tr>
+                <tr>
+                    <td>No me aparece el usuario para ingresar a la PC</td>
+                    <td>el usuario es : monitortrazabilidad@salesdejujuy.com , contraseña es la misma que se usa  </td>
+                </tr>
+                
+               
+                <!-- Agrega más filas según sea necesario -->
+            </tbody>
+        </table>
+    </section>
+
+    <script>
+        document.getElementById('search').addEventListener('input', function() {
+            var searchValue = this.value.toLowerCase();
+            var errorTable = document.getElementById('errorTable');
+            var rows = errorTable.getElementsByTagName('tbody')[0].getElementsByTagName('tr');
+
+            for (var i = 0; i < rows.length; i++) {
+                var cells = rows[i].getElementsByTagName('td');
+                var shouldDisplay = false;
+
+                for (var j = 0; j < cells.length; j++) {
+                    var cellText = cells[j].textContent.toLowerCase();
+                    if (cellText.includes(searchValue)) {
+                        shouldDisplay = true;
+                        break;
+                    }
+                }
+
+                if (shouldDisplay) {
+                    rows[i].style.display = '';
+                } else {
+                    rows[i].style.display = 'none';
+                }
+            }
+        });
+    </script>
+</body>
+</html>
+
